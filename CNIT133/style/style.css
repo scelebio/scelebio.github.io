@@ -1,0 +1,15 @@
+h1 {color:indianred;
+    font-size: 45px;}
+ul {font-size: 24px;}
+a:link, a:visited {
+  background-color: blue;
+  color: white;
+  padding: 14px 25px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: pink;
+}
