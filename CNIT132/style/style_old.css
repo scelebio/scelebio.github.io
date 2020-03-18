@@ -1,0 +1,60 @@
+h1 {color:red;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+    }
+p::first-letter {font-size: 40px; font-weight:bold; font-style:italic;}
+body{background-color: yellow;}
+h2  {color:blue;
+    text-align: right;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+h3 {color:blue;
+    text-align: right;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:48px
+}
+a:hover {
+    color:red;
+}
+a:link {
+    color:red;
+}
+a:visited {
+    color:blue;
+}
+
+h4 {text-align: right;
+    color:red;
+    }
+table   {background-color:cyan ; 
+        text-align: left;
+        border-spacing: 5px;
+        position: absolute;
+        animation: tablegreen normal 5s;
+        animation-fill-mode: forwards;
+}
+td {padding: 10px;}
+.bold {text-align: center;
+        font-weight: bold}
+
+@keyframes tablegreen {
+        from {background-color: cyan; color:black}
+            to {background-color: green; color:white}
+}
+
+#box {width:300px; height:100px;
+    background-color: red;
+    font-weight:bold;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+    animation: banner 5s infinite alternate;
+}
+
+@keyframes banner {
+    from {left: 0}
+    to {left: calc(100%-300px);}
+}
