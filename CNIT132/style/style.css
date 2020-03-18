@@ -16,17 +16,19 @@ h3 {color:blue;
     font-family: 'Times New Roman', Times, serif;
     font-size:48px
 }
-/*
-a:hover {
-    color:red;
+
+a:{
+    color:#0000FF;
 }
-a:link {
-    color:red;
-}
-*/
+
 a:visited {
-    color:blue;
+    color:#FF3333;
 }
+
+a:hover {
+    color: red;
+}
+
 
 h4 {text-align: right;
     color:red;
