@@ -16,12 +16,14 @@ h3 {color:blue;
     font-family: 'Times New Roman', Times, serif;
     font-size:48px
 }
+/*
 a:hover {
     color:red;
 }
 a:link {
     color:red;
 }
+*/
 a:visited {
     color:blue;
 }
