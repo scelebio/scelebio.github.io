@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homework 2-5</title>
+    <link href="style/style2-5.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+ 
+ 
+</body>
+
+<script>
+    
+ $(document).ready(function(){
+
+  
+    $('#num1').focus(function() {
+		$(this).css('background-color','red');
+	});
+
+    
+    $("#btn").click(function() {
+    
+
+    var item1
+
+    item1 = document.getElementById("num1").value;
+
+         n1 = parseInt(item1);
+
+
+         if ( n1<=0)
+		    {alert("please enter positive numbers!")
+            
+            location.reload();}
+
+
+
+    document.getElementById("eur").value = (n1 * 0.89).toFixed(2);
+    
+    document.getElementById("cad").value =(n1 * 1.31).toFixed(2);
+    
+    document.getElementById("hkd").value =(n1 * 7.8).toFixed(2);
+    
+    document.getElementById("jyen").value =(n1 * 108.38).toFixed(2);
+
+    document.getElementById("pes").value =(n1 * 19.11).toFixed(2);
+
+         });
+    });
+   
+
+</script>
+
+
+<div id="flip">Click to Show/Hide Instructions</div>
+<div id="panel">The foreign exchange rates in July 2019.<br><br>Enter a dollar amount in the table below to see the corresponding foreign exchange values</div>
+
+<form id="myform" name="myform">
+<br>
+    <table>
+        <tr style="font-weight: bold;">
+            <td>Currency</td>
+            <td>Rate</td>
+            <td>Value</td>
+        </tr>
+
+    <tr>
+        <td>Hong Kong Dollar</td> 
+        <td style="text-align: right">7.80</td>
+        <td><input type="number" id="hkd" style="text-align:right" readonly></td>
+    </tr>
+
+    <tr>
+        <td>Euro</td> 
+        <td style="text-align: right" >0.89</td>
+        <td><input type="number" id="eur" style="text-align:right" readonly></td>
+    </tr>
+
+    <tr>
+        <td>Canadian Dollar</td> 
+        <td style="text-align: right" >1.31</td>
+        <td><input type="number" id="cad" style="text-align:right" readonly></td>
+    </tr>
+
+    <tr>
+        <td>Japanese Yen</td> 
+        <td style="text-align: right">108.38</td>
+        <td><input type="number" id="jyen" style="text-align:right" readonly></td>
+    </tr>
+
+    <tr>
+        <td>Mexican Peso</td> 
+        <td style="text-align: right">19.11</td>
+        <td><input type="number" id="pes" style="text-align:right" readonly></td>
+    </tr>
+</table>
+<table>
+    <tr style="font-weight: bold;">
+        <td>Enter Amount of U.S Dollars</td>
+        <td><input type="number" id="num1" style="width:132px;text-align:right"></td>
+    </tr>
+
+    </table>
+    <br>
+    <button type="button" id="btn">Submit</button>
+    
+    <button type="clear" id="RESET">Reset</button><br><br>
+
+    
+</form>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+    })
+})
+</script>
+<a href="homework1.html">main page</a>
+<br>
+<a href="homework2.html">Back</a>
+</html>
+
+
+
+
+

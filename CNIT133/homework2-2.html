@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>Homework 2-2</title>
+    <link href="style/style2-2.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta name="description" content="homework2 part 2 for CNIT 133 done by Sarper Celebioglu">
+
+    <h1>CNIT 133 Homework 2 - Part 2</h1>
+    
+
+    <a href="homework1.html">main page</a>
+    <br>
+    <a href="homework2.html">Back</a>
+    
+    <h2>Student Grades</h2>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script>
+
+$(document).ready(function() {
+    $("#btn").click(function() { 
+     var number1, number2, number3, number4, n1, n2, n3, n4, finalaverage;
+      
+
+     number1 = document.forms["myform"].elements["num1"].value;
+     
+     number2 = document.getElementById("num2").value
+      
+      number3 = document.getElementById("num3").value
+      
+      number4 = document.getElementById("num4").value
+      
+      
+
+         n1 = parseInt(number1);
+         n2 = parseInt(number2);
+        n3 = parseInt(number3);
+        n4 = parseInt(number4)
+
+       
+
+         finalaverage = (.5 * n1) + (.2 * n2) + (.2 * n3) + (.1 * n4)
+
+
+     if ( n1>100 || n2>100 || n3>100 || n4>100 )
+		    {alert("please enter numbers only between 0-100!")
+          return;}
+
+      if ( n1<0 || n2<0 || n3<0 || n4<0 )
+		    {alert("please enter numbers only between 0-100!")
+          return;}
+      
+         if ( finalaverage>=90 ) {
+            $("input:text").val("A");
+         }
+        if ( finalaverage >= 80 && finalaverage<=89)  {
+            $("input:text").val("B");
+         }
+      
+            if ( finalaverage >= 70 && finalaverage<=79) {
+                $("input:text").val("C");
+         }
+      
+                  if ( finalaverage >= 60 && finalaverage<=69) 
+            { $("input:text").val("D");
+            window.alert("Students final grade is D") 
+            window.alert("Student must retake the course")
+            }
+        if (finalaverage<=59 )  
+                { $("input:text").val("F");
+                window.alert("Students final grade is F")
+                window.alert("Student must retake the course")
+                } 
+
+        document.getElementById('num1').focus();
+
+});
+});
+
+</script>
+
+
+
+
+</head>
+
+<body>
+
+<section class="body">
+
+
+<form id="myform" name="myform">
+
+
+
+<table>
+<tr>
+
+<td>Homework Average</td> 
+<td><input type="number" name="num1" id="num1"  autofocus></td>
+</tr>
+
+<tr>
+<td>Mid Exam Grades</td> 
+<td><input type="number" name="num2" id="num2"></td>
+</tr>
+
+<tr>
+<td>Final Exam Grades</td> 
+<td><input type="number" id="num3"></td>
+</tr>
+  
+<tr>
+<td>Participation</td> 
+<td><input type="number" id="num4"></td>
+</tr>
+
+<tr>
+<td>Result</td>  
+<td><input type="text" id="result" readonly></td>
+
+</tr>
+
+<tr>
+
+</td>
+</tr>
+
+</table>
+<br>
+<button type="button" id="btn">Submit</button>
+<input type="reset" value="RESET" onclick="document.getElementById('num1').focus();">
+
+</form>
+
+</section>
+<BR>
+<hr>
+<table>
+
+    <tr>
+        <td>Score</td>
+        <td>Grade</td>
+    </tr>
+    
+    <tr>
+        <td>90-100</td>
+        <td>A</td>
+    </tr>
+    
+    <tr>
+        <td>80-89</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>70-79</td>
+        <td>C</td>
+    </tr>
+    
+    <tr>
+        <td>60-69</td>
+        <td>D</td>
+    </tr>
+    
+    <tr>
+        <td>0-59</td>
+        <td>F</td>
+    </tr>
+    
+    </table>
+
+</body>
+</html>
+
+

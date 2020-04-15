@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    
+<head>
+<meta charset="utf-8">
+<title>Homework 2-4</title>
+<link href="style/style2-4.css" rel="stylesheet"/>
+
+<h1>Homework 2 Part 4</h1>
+<a href="homework1.html">main page</a>
+<br>
+<a href="homework2.html">Back</a><br><br>
+</head>
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+      
+var random1, random2, result,
+
+random1 = Math.floor(Math.random() * 9) + 1;
+random2 = Math.floor(Math.random() * 9) + 1;
+
+r1= parseFloat(random1);
+r2= parseFloat(random2);
+
+result = r1 * r2
+
+document.getElementById("num1").value= r1;
+document.getElementById("num2").value= r2;
+
+$("#num3").focus();      
+
+
+$(":Reset").click(function () {                       
+             $("#num3").focus();
+           });
+
+
+
+$("#btn").click(function() {
+  a1= parseInt($('#num3').val());
+
+
+if(a1===result)
+{
+$("input:text").val("Very Good!");
+setTimeout(function(){if(confirm("Do you wish to continue?"))
+window.location.reload(1);},500)
+
+}
+
+else
+{
+  $("input:text").val("No. Please try again.");
+}
+$("#num3").val("");  
+});
+})
+
+</script>
+
+
+
+
+<p1>Please enter your result!</p1>
+
+<form id="myform" name="myform">
+<br>
+<table>
+
+<tr>
+<td><input type="number" id="num1" readonly></td>
+<td>x</td>
+<td><input type="number" id="num2" readonly></td>
+<td>=</td>
+<td><input type="number" id="num3"></td>
+</tr>
+</table>
+
+<button type="button" id="btn">Submit</button>
+</form>
+<form class="last">
+<tr>
+<td>Result: <input type="text" readonly></td>
+</tr>
+</form>
+</body>
+</html>

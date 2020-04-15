@@ -1,0 +1,17 @@
+body {background-color: #f5f5dc;}
+    
+.body { width: 550px;
+         margin-right: auto;  
+        
+    }
+    
+input {text-align: right;}
+
+table{
+    border:1ex;
+    border-style: solid;
+    ;
+}
+td {
+    border-style:solid;
+}

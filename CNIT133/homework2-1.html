@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>Homework 2-1</title>
+    <link href="style/style2-1.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta name="description" content="homework 2 part 1 for CNIT 133 done by Sarper Celebioglu">
+
+    <h1>CNIT 133 Homework 2 - Part 1</h1>
+
+    <a href="homework1.html">main page</a>
+    <br>
+    <a href="homework2.html">Back</a>
+
+ 
+    
+    <script>
+
+function process()
+
+  {	
+
+
+         var number1, number2, number3, number4, number5,
+             negativeCount = 0, positiveCount = 0; zeroCount = 0;
+
+
+    number1 = document.getElementById("num1").value;
+     
+    number2 = document.getElementById("num2").value;
+      
+    number3 = document.getElementById("num3").value;
+     
+    number4 = document.getElementById("num4").value;
+      
+    number5 = document.getElementById("num5").value;
+
+         
+
+         n1 = parseInt(number1);
+         n2 = parseInt(number2);
+         n3 = parseInt(number3);
+         n4 = parseInt(number4);
+        n5 = parseInt(number5);
+
+       
+  
+         if ( n1 < 0 )
+            negativeCount = negativeCount + 1;
+      
+         if ( n1 > 0 )
+            positiveCount = positiveCount + 1;
+      
+        if ( n1 == 0 )
+            zeroCount = zeroCount + 1;
+
+        
+         if ( n2 < 0 )
+            negativeCount = negativeCount + 1;
+      
+         if ( n2 > 0 )
+            positiveCount = positiveCount + 1;
+      
+        if ( n2 == 0 )
+            zeroCount = zeroCount + 1;
+      
+        
+         if ( n3 < 0 )
+            negativeCount = negativeCount + 1;
+      
+         if ( n3 > 0 )
+            positiveCount = positiveCount + 1;
+      
+        if ( n3 == 0 )
+            zeroCount = zeroCount + 1;
+      
+        
+         if ( n4 < 0 )
+            negativeCount = negativeCount + 1;
+      
+         if ( n4 > 0 )
+            positiveCount = positiveCount + 1;
+      
+        if ( n4 == 0 )
+            zeroCount = zeroCount + 1;
+      
+         if ( n5 < 0 )
+            negativeCount = negativeCount + 1;
+      
+         if ( n5 > 0 )
+            positiveCount = positiveCount + 1;
+      
+        if ( n5 == 0 )
+            zeroCount = zeroCount + 1;
+
+
+document.getElementById("result").value = ("The inputted numbers were " + n1 + ", " + n2 + ", " +  n3 + ", " + n4 +", " + n5 +
+"\nThere were " +  negativeCount + " negative numbers " + 
+"\nThere were " + positiveCount + " positive numbers" + 
+"\nThere were " + zeroCount + " zeros"                                          
+)
+
+    }
+      
+</script>
+
+    
+</head>
+
+<body>
+
+<section class="main">
+<h2>Input Numbers</h2>
+
+   <ol>
+    <li>input numbers to the below text fields</li>
+    <li>click on "submit"</li>
+    <li>Check out "Results" section to see how many number you entered are positive, negative and/or equal to zero</li>
+    <li>click on reset button to get results for different numbers</li>
+    </ol>
+
+<br>
+
+
+<form id="myform" name="myform">
+
+<table>
+<tr>
+
+<td>First Number:</td> 
+<td><input type="number" id="num1" autofocus></td>
+
+<td>Second Number:</td> 
+<td><input type="number" id="num2"></td>
+
+</tr>
+
+<tr>
+
+<td>Third Number:</td>  
+<td><input type="number" id="num3"></td>
+
+<td>Fourth Number:</td>  
+<td><input type="number" id="num4"></td>
+
+</tr>
+
+    <tr>
+
+<td>Fifth Number:</td>  
+<td><input type="number" id="num5"></td>
+
+</tr>
+</table>
+
+<br>
+
+Results: <textarea rows="6" cols="40" id="result" readonly></textarea><br><br>
+
+<input type="button" onclick="process()" value="SUBMIT">
+
+<input type="reset" value="RESET"><br><br>
+
+
+</form>
+
+</section>
+    </body>
+</html>

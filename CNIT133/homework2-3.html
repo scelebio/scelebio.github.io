@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homework 2-3</title>
+    <link href="style/style2-3.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <a href="homework1.html">main page</a>
+    <br>
+    <a href="homework2.html">Back</a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+           $('#Salesperson').tooltip();
+        });
+        </script>
+    
+</head>
+<body>
+ 
+
+<script>
+    function process() {
+
+    var item1, item2, item3, item4
+
+    item1 = document.getElementById("num1").value;
+    item2 = document.getElementById("num2").value;
+    item3 = document.getElementById("num3").value;
+    item4 = document.getElementById("num4").value;  
+
+         n1 = parseInt(item1);
+         n2 = parseInt(item2);
+         n3 = parseInt(item3);
+         n4 = parseInt(item4);
+
+         if ( n1<0 || n2<0 || n3<0 || n4<0 )
+		    {alert("please enter '0' or positive numbers!")
+          return;}
+
+    document.getElementById("numbersold1").value = (n1);
+    document.getElementById("result1").value = (n1 * 239.99).toFixed(2)
+    document.getElementById("numbersold2").value = (n2);
+    document.getElementById("result2").value =(n2 * 129.75).toFixed(2)
+    document.getElementById("numbersold3").value = (n3);
+    document.getElementById("result3").value =(n3 * 99.95).toFixed(2)
+    document.getElementById("numbersold4").value = (n4);
+    document.getElementById("result4").value =(n4 * 350.89).toFixed(2)
+
+    document.getElementById("sum").value = ((n1 * 239.99) + (n2 * 129.75) + (n3 * 99.95) + (n4 * 350.89)).toFixed(2)
+    document.getElementById("earning").value = ((((n1 * 239.99) + (n2 * 129.75) + (n3 * 99.95) + (n4 * 350.89)) *0.09) + 200).toFixed(2)
+
+    }
+</script>
+
+<form id="myform" name="myform">
+
+    <p><label for="Salesperson">Salesperson:</label>
+        <input id="Salesperson" title="Please make sure that the salesperson's name is spelled correctly"></p>
+
+    <table>
+
+    <tr>
+    <td>Item 1:</td> 
+    <td><input type="number" id="num1" autofocus></td>
+    </tr>
+
+    <tr>
+    <td>Item 2:</td> 
+    <td><input type="number" id="num2"></td>
+    </tr>
+    
+    <tr>
+    <td>Item 3:</td>  
+    <td><input type="number" id="num3"></td>
+    </tr>
+    
+    <tr>
+    <td>Item 4:</td>  
+    <td><input type="number" id="num4"></td>
+    </tr>
+
+    </table>
+    
+    <input type="button" onclick="process()" value="SUBMIT">
+    
+    <input type="reset" value="RESET"><br><br>
+    
+    
+
+
+<table>
+<tr>
+<td>Item #</td>
+<td>Price</td>
+<td>Number Sold</td>
+<td>Total</td>
+</tr>
+
+<tr>
+    <td>1</td>
+    <td>$239.99</td>
+    <td><input id="numbersold1"></td>
+    <td><input id="result1"></td>
+</tr>
+
+<tr>
+    <td>2</td>
+    <td>$129.75</td>
+    <td><input id="numbersold2"></td>
+    <td><input id="result2"></td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>$99.95</td>
+    <td><input id="numbersold3"></td>
+    <td><input id="result3"></td>
+</tr>
+
+<tr>
+    <td>4</td>
+    <td>$350.89</td>
+    <td><input id="numbersold4"></td>
+    <td><input id="result4"></td>
+</tr>
+
+
+</table>
+<table>
+
+    <tr>
+        <td>Total Amount Sold:</td>
+        <td><input id="sum" style="margin-left: 109px;"></td>
+    </tr>
+
+    <tr>
+        <td>Total Weekly Earnings:</td>
+        <td><input  id="earning" style="margin-left: 109px;"></td>
+    </tr>
+
+
+</table>
+</form>
+</body>
+</html>

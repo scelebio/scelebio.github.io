@@ -1,0 +1,16 @@
+body {background-color: #f5f5dc;}
+
+.main {	width:500px;
+	margin:0px auto; 
+    text-align:left; 
+    font-family:"comic sans ms",sans-serif;
+    font-weight:bold;}
+    
+    
+input {text-align: right;}
+
+ol{
+    font-weight:14px;
+    text-align: justify;  
+    width: 500px;
+}

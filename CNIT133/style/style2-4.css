@@ -1,0 +1,12 @@
+body { background-color: #f5f5dc;
+}
+.last {
+    height: 40px;
+}
+
+form {height: 80px;
+       width: 550px;
+       background-color:rgb(180, 209, 143);
+       text-align: center;
+}
+
