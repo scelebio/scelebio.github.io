@@ -65,3 +65,10 @@ td {padding: 10px;}
     from { left: 0;}
     to { left: calc(100% - 300px);}
 }
+
+.pagewrapper {
+
+    height:200px;
+    width:500px;
+    background-color:blue;
+}
