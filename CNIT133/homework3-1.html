@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Homework 3-1</title>
+<meta charset="utf-8">
+<meta name="description" content="CNIT133 Homework 3 Part 1 done by Sarper Celebioglu">
+<h1>CNIT 133 Homework 3 - Part 1</h1>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<a href="homework1.html">Main Page</a>
+<br>
+<a href="homework3.html">Back</a>
+<br>
+<hr>
+</head>
+<body onLoad="doSth()">
+<style>
+    body {background-color:#f5f5dc;
+        width: 500px; margin: 0px auto;}
+
+    #draggable { color:white; width: 200px; background-color:green; border: 1px solid red; text-align:center; margin:auto; }
+</style>
+<h2>Part A</h2>
+
+
+    <script>
+        function doSth() {
+    var sum = 0;
+    var multiplication = 1;
+    var sum2 = 0;
+    var multiplication2 = 1;
+    var x = 3;
+  
+    for ( var number = 5; number <= 21; number += 4 )
+    { 
+       sum += number;
+
+        multiplication *= number;
+    }
+
+    while(x <= 21 ) {
+    multiplication2 *= x;
+    sum2 += x;
+    x = x + 3;
+    }
+
+
+   document.getElementById("sumresult").innerHTML = sum;
+   document.getElementById("multresult").innerHTML = multiplication;
+   document.getElementById("sumresult2").innerHTML = sum2;
+   document.getElementById("multresult2").innerHTML = multiplication2;
+        }
+  </script>
+ <script>
+    $(function() {
+      $( "#draggable" ).draggable();
+    });
+    </script>
+
+<p>The multiplication of the numbers 5, 9, 13, 17, 21 is <span id="multresult"></p>
+<p>The sum of the numbers 5, 9, 13, 17, 21 is <span id="sumresult">.</p>
+
+    <hr>
+<h3>Part B</h3>
+
+<p>The multiplication of the numbers 3, 6, 9, 12, 15, 18, 21 is <span id="multresult2"></p>
+    <p>The sum of the numbers 3, 6, 9, 12, 15, 18, 21 is <span id="sumresult2">.</p>
+        <br>
+    <div id="draggable">
+    <p>Try to drag this div around</p>
+    </div>
+</body>
+</html>

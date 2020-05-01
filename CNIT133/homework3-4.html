@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="CNIT133 Homework 3 Part 4 done by Sarper Celebioglu">
+<title>Homework 3-4</title>
+<h1>CNIT 133 Homework 3 - Part 4</h1>
+<a href="homework1.html">Main Page</a>
+<br>
+<a href="homework3.html">Back</a>
+<br>
+<hr>
+<style>
+body {
+        font-size: 90%;
+        background-color:#f5f5dc;
+        font-weight: bold;
+	}
+
+.body {
+       width: 400px;
+       margin: 0px auto; padding: 15px;
+       background-color: #909090;	
+       }
+
+h2 {color: white;
+font-weight:bold}
+
+
+</style>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> -->
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+var stateArray = [ ["AL", "ALABAMA", "MONTGOMERY", "4,887,871"],                     
+                ["AK", "ALASKA", "JUNEAU", "737,438"],  
+                ["AZ","ARIZONA","PHOENIX","7,171,646"],
+                ["AR", "ARKANSAS", "LITTLE ROCK", "3,010,825"],
+                ["CA", "CALIFORNIA", "SACRAMENTO", "39,557,045"],
+                ["CO", "COLORADO", "DENVER", "5,694,564"]];    
+
+function ButtonPressed()
+  {   
+    var searchKey = document.forms["SearchForm"].elements["inputStateVal"].value;
+    searchKey = searchKey.toUpperCase();
+    
+    var found = false;
+    for (var row = 0; row < stateArray.length; row++)
+     {
+     if ((stateArray[row][0] == searchKey) || (stateArray[row][1] == searchKey))
+     { 
+       document.forms["SearchForm"].elements["comment"].value = ("Thanks for your inquiry, \nhere is the information you requested:" +
+"\nState abbr = " + stateArray[row][0] + ", " +
+"\nState Name = " + stateArray[row][1] + ", " +
+"\nCapital = " + stateArray[row][2] + ", " +
+"\nPopulation = " + stateArray[row][3]  );
+       row = stateArray.length;   //ends loop if match found
+       found = true;
+     }
+    }
+
+  if ( found == false ) {
+   document.forms["SearchForm"].elements["comment"].value= "State not found!"; 
+       }
+
+  }
+</script>
+
+</head>
+
+<body>
+
+<section class="body">
+
+<h2>State Wise 2018 Census Data</h2>
+
+<p>Enter a State abbreviation or full name into the text field</p>
+<p>Available states are as follows:</p>
+<p>AL, AK, AZ, AR, CA, CO</p>
+
+<br>
+
+
+
+<form name="SearchForm">
+<input type="text" size="15" name="inputStateVal" autofocus> 
+<input onclick="ButtonPressed();" type="button" value="Submit State" name="search" id="search">
+
+<br>
+<br>
+<textarea rows="6" cols="40" id="comment" readonly></textarea><br><br>
+<!--<input type="text" row="6" size="100" name="comment" id="comment"><br><br> -->
+<input type="reset" value="Reset" onclick="location.reload();">
+</form>
+
+</section>
+</body>
+</html>

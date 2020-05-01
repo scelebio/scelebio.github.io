@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="CNIT133 Homework 3 Part 5 done by Sarper Celebioglu">
+<title>Homework 3-5 (extra)</title>
+	<h1>CNIT 133 Homework 3 - Part 5 (Extra)</h1>
+	<a href="homework1.html">Main Page</a>
+	<br>
+	<a href="homework3.html">Back</a>
+	<br>
+	<hr>
+		<style>
+		 body {
+        font-size: 90%;
+        background-color:#f5f5dc;
+        font-weight: bold;
+	}
+		  p.a {
+			font-family: monospace;
+			font-size:20px;
+		  }
+
+		  .body {
+       width: 350px;
+	   height: 350px;
+       margin: 0px auto; padding: 10px;
+       background-color: #dddada;
+	   text-align:center;
+       }
+	  	</style>
+	  	<script>
+	  		function process(){
+	  			var size = document.getElementById("inputNumber").value;
+	  			var square="";
+	  			if((size<=10)&&(size>=2)){
+		  			for(var i = 0; i < size; i++){
+		  				for(var j = 0; j < size; j++){
+		  					square+="* ";
+		  				}
+		  				square+="<br>";
+		  			}
+		  		} else {
+		  			square+="<span style='color:red;'>ERROR! Please enter a number between 2-10</span>"
+		  		}
+		  		document.getElementById("squareid").innerHTML=square;
+	  		}
+	  	</script>
+	</head>
+	<body>
+		<section class="body">
+		<p>Enter size of square between 2 and 10 inclusive</p><br>
+		<input type="number" id="inputNumber">
+		<input type="button" value="print square" onclick="process()">
+		<p class="a" id="squareid">
+		</section>
+</body>
+</html>

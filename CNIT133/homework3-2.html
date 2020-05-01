@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="utf-8">
+<meta name="description" content="CNIT133 Homework 3 Part 2 done by Sarper Celebioglu">
+<title>Homework 3-2</title>
+<h1>CNIT 133 Homework 3 - Part 2</h1>
+<a href="homework1.html">Main Page</a>
+<br>
+<a href="homework3.html">Back</a>
+<br>
+<hr>
+<style>
+body {background-color:#f5f5dc;}
+table, th, td { border: 1px solid red; }
+table { border-collapse: collapse; margin-bottom: 10px;}
+td, th { padding: 3px; }
+th { background-color: maroon; color: white; }
+tr:nth-child(even) { background-color: yellow; }
+tr:nth-child(odd) { background-color: orange; }
+</style>
+<body onLoad="process()">
+<script>
+function process() {
+    var principal = 1000;
+  var output="";
+  var finalamount = 0;
+  
+  for (var rate=5; rate<=7; rate++) {
+      output += "<table><tr><th>Year</th><th>Amount in Deposit</th><th>Interest Rate = " + rate + "%</th></tr>";
+      for (var years=1; years<=10; years++) {
+	     finalamount = principal * (( 1 + rate/100 )**years);
+		 output += "<tr><td>" + years + "</td><td>" + finalamount.toFixed(2) + " in " + years + " years</td><td>" + rate/100 + "</td></tr>";
+	  }
+      output += "</table>";	  
+  }
+ 
+  document.getElementById('result').innerHTML = output;
+  }
+</script>
+</head>
+
+<div id="result"></div>
+</body>
+</html>

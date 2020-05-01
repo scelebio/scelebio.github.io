@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="CNIT133 Homework 3 Part 3 done by Sarper Celebioglu">
+<title>Homework 3-3</title>
+<h1>CNIT 133 Homework 3 - Part 3</h1>
+<a href="homework1.html">Main Page</a>
+<br>
+<a href="homework3.html">Back</a>
+<br>
+<hr>
+<style>
+body {background-color:#f5f5dc;}
+
+td {text-align:center;
+font-weight :bold;
+border-style:solid}
+
+table {border-style: solid;
+border-collapse: collapse;
+}
+.body {
+       width: 430px;
+	   height: 250px;
+       margin: 0px auto; padding: 10px;
+       background-color: #dddada;
+	   text-align:center;
+       }
+</style>
+</head>
+<script>
+  function function1(){
+    var x = document.getElementById("uniselect").value;
+    switch(x) {
+      case "CCSF":
+        window.open("https://www.ccsf.edu/");
+        break;
+      case "SFSU":
+        window.open("https://www.sfsu.edu/");
+        break;
+      case "BERK":
+        window.open("https://www.berkeley.edu/");
+        break;
+    }
+  }
+
+  function function2(){
+    var x = document.getElementById("hostselect").value;
+    switch(x) {
+      case "ZUCK":
+        window.open("https://zuckerbergsanfranciscogeneral.org/");
+        break;
+      case "UCSF":
+        window.open("https://www.ucsfhealth.org/");
+        break;
+      case "CHIN":
+        window.open("https://www.chinesehospital-sf.org/");
+        break;
+    }
+  }
+
+</script>
+
+<body>
+
+
+
+<section class="body">
+    <h2>San Francisco City Guide</h2>
+    <br>
+<table>
+    <tr>
+        <td>Universities</td>
+        <td colspan="2">Hospitals</td>
+
+    </tr>
+<tr>
+    <td>
+  <select id="uniselect" onchange="function1()">
+    <option value="CCSF">CCSF</option>
+    <option value="SFSU">SFSU</option>
+    <option value="BERK">UC Berkeley</option>
+    </select>
+  </td>
+  <td>
+    <select id="hostselect">
+      <option value="ZUCK">Zuckerberg San Francisco General Hospital</option>
+      <option value="UCSF">UCSF Medical Center</option>
+      <option value="CHIN">Chinese Hospital</option>
+      </select>
+  </td>
+  <td>
+    <input type="button" value="Go" onclick="function2()">
+  </td>
+</table>
+</section>
+</body>
+</html>
