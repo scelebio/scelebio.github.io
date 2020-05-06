@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="CNIT133 Homework 4 Part 1 done by Sarper Celebioglu">
+<title>Homework 4-1</title>
+<h1>CNIT 133 Homework 4 - Part 1</h1>
+<a href="homework1.html">Main Page</a>
+<br>
+<a href="homework4.html">Back</a>
+<br>
+<hr>
+<style>
+    body {
+            font-size: 90%;
+            background-color:#f5f5dc;
+            font-weight: bold;
+        }
+    
+    .body {
+           width: 600px;
+           margin: 0px auto; padding: 15px;
+           background-color: #909090;	
+           }
+    
+    h2 {color: white;
+    font-weight:bold}  
+</style>
+
+    <script>
+        function roundNumber() {
+            var errMsg = "Invalid Input";
+            var nbrRegex = /^\d+[.]\d{4,}$/;
+
+            var number= document.getElementById("number").value
+
+            if (isNaN(number) || (number) == "" ||nbrRegex.exec(number) == null) {
+                document.getElementById("errOut").innerHTML = errMsg;
+
+            } else {
+
+                var num = parseFloat(document.getElementById("number").value);
+
+                document.myForm.output.value =
+                    "The entered number: " + num +
+                    "\n rounded to the nearest integer using math round: " +
+                    roundToIntegerRound(num) +
+                    "\n calculated square root and rounded to the nearest integer: " +
+                    calculateSquareRootround(num) +
+                    "\n rounded to the nearest tenth using toFixed: " +
+                    roundToTenthsTofixed(num) +
+                    "\n rounded to the nearest hundredth using toFixed: " +
+                    roundToHundredthsTofixed(num) +
+                    "\n rounded to the nearest thousandths using toFixed: " +
+                    roundToThousandthsTofixed(num);
+
+            }
+
+        }
+
+        function roundToIntegerRound(number) {
+            return (Math.round(number));
+        }
+
+        function calculateSquareRootround(number) {
+            return Math.round(Math.sqrt(number));
+        }
+
+        function roundToTenthsTofixed(number) {
+            return (number.toFixed(1));
+        }
+
+        function roundToHundredthsTofixed(number) {
+            return (number.toFixed(2));
+        }
+
+        function roundToThousandthsTofixed(number) {
+            return (number.toFixed(3));
+        }
+
+    </script>
+</head>
+
+<body onload="document.getElementById('number').focus();">
+
+    <section class="body">
+
+        <h3>Math objects</h3>
+
+        <div id="errOut"></div>
+
+        <form name="myForm">
+            Enter a number with at least 4 decimal positions: <br><br>
+            <input type="text" size="30" id="number">
+            <input type="button" value="Round" onclick="roundNumber()"><br>
+            <textarea name="output" rows="8" cols="70" readonly>
+         </textarea><br>
+            <input type="reset" value="Reset" onClick="location.reload();">
+        </form>
+
+    </section>
+
+</body>
+
+</html>

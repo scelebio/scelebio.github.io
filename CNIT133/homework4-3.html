@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="CNIT133 Homework 4 Part 3 done by Sarper Celebioglu">
+    <title>Homework 4-3</title>
+    <h1>CNIT 133 Homework 4 - Part 3</h1>
+    <a href="homework1.html">Main Page</a>
+    <br>
+    <a href="homework4.html">Back</a>
+    <br>
+    <hr>
+    <style>
+        body {
+                font-size: 90%;
+                background-color:#f5f5dc;
+                font-weight: bold;
+            }
+        
+        .body {
+               width: 600px;
+               margin: 0px auto; padding: 15px;
+               background-color: #909090;	
+               }
+        
+        h2 {color: white;
+        font-weight:bold}  
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://rawgit.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            jQuery(function($) {
+                $('input[name="phone-number"]').mask('(999)999-9999');
+            });
+        });
+
+        function parseNumber() {
+
+            if ($("#myForm").valid()) {
+                var phone = $('#phone-number').val();
+
+                var tokens = phone.split('-');
+
+                $('#extension').val(tokens[1]);
+                
+                var areaCode = document.forms["myForm"].elements["phone-number"].value;
+                document.forms["myForm"].elements["areaCode"].value = areaCode.substr(1, 3);
+            } else {
+                return false;
+            }
+            document.getElementById("firstThree").value = phone.substring(5,8)
+        }
+    </script>
+
+</head>
+
+<body onload="document.forms['myForm'].elements['phone-number'].focus();">
+
+    <section class="body">
+        <form name="myForm" id="myForm">
+            <table>
+                <tr>
+                    <td>Enter a Phone Number <br>
+                        [in the form (999)999-9999]
+                    </td>
+                    <td>
+                        <input name="phone-number" type="text" size="10" id="phone-number">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Split" onclick="parseNumber()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Area Code:</td>
+                    <td>
+                        <input name="areaCode" type="text" size="3">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>First three digits:</td>
+                    <td>
+                        <input name="firstThree" type="text" size="3" id="firstThree">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last four digits:</td>
+                    <td>
+                        <input name="extension" type="text" size="4" id="extension">
+                    </td>
+
+                </tr>
+            </table>
+            <input type="reset" value="Reset">
+        </form>
+    </section>
+</body>
+</html>

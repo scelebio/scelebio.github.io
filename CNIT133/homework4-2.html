@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="CNIT133 Homework 4 Part 2 done by Sarper Celebioglu">
+<title>Homework 4-2</title>
+<h1>CNIT 133 Homework 4 - Part 2</h1>
+<a href="homework1.html">Main Page</a>
+<br>
+<a href="homework4.html">Back</a>
+<br>
+<hr>
+<style>
+    body {
+            font-size: 90%;
+            background-color:#f5f5dc;
+            font-weight: bold;
+        }
+    
+    .body {
+           width: 600px;
+           margin: 0px auto; padding: 15px;
+           background-color: #909090;	
+           }
+    
+    h2 {color: white;
+    font-weight:bold}  
+</style>
+    <script>
+        function search() {
+            var count = 0;
+
+            var key = document.getElementById("key").value.toLowerCase().charAt(0);
+            var key = key.toLowerCase();
+
+            var stringToSearch = document.getElementById("txtinpt").value.toLowerCase();
+            stringToSearch = stringToSearch.toLowerCase();
+
+
+            for (i = 0; i < stringToSearch.length; i++) {
+
+                if (stringToSearch.charAt(i) == key)
+                    count++;
+            }
+
+            if (count == 0) {
+
+              
+
+                var myText = "<html>\n";
+                myText += "<head>\n";
+                myText += "<title>Not Found</title>\n";
+                myText += "</head>\n";
+                myText += "<div style='margin:0 auto;'>\n";
+                myText += "<p><strong>Search character '" + key + "' not found in text string!</strong></p>\n";
+                myText += "<input type='button' value='Close Window' onclick='window.close()'>\n";
+                myText += "</div>\n";
+                myText += "</body>\n";
+                myText += "</html>";
+
+
+                var newWindow = window.open("", "new_window","top=1,right=1,width=300,height=100");
+
+                newWindow.focus();
+
+                newWindow.document.write(myText);
+
+                newWindow.document.close();
+
+                document.getElementById("output").value = "See popup window";
+                
+                document.getElementById("txtinpt").value = "";
+
+            } else
+                document.getElementById("output").value = count +
+                " occurrence(s) of '" + key + "' found";
+        }
+    </script>
+
+</head>
+
+<body onload="document.getElementById('txtinpt').focus();">
+    <br>
+
+        
+        <form class="body">
+            <h3>Object Exercise - charAt()</h3>
+            <p>Enter a line or lines of text<br><br>
+                <textarea id="txtinpt" rows="10" cols="60">
+         </textarea><br><br>
+                Enter a character to search for
+                <input id="key" type="text" size="5">
+                <input type="button" value="Search" onclick="search();">
+                <input type="reset" value="Reset" onClick="location.reload();">
+
+                <br><br>
+
+                Occurrences of search character in :
+                <textarea cols="30" rows="1" id="output" readonly></textarea>
+            </p>
+        </form>
+
+</body>
+
+</html>
