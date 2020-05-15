@@ -4,18 +4,55 @@
 
 <head>
     <title>Contact</title>
-<!--    <link href="style/style.css" rel="stylesheet"/> -->
-    
+
+<link href="style/stylefinal.css" rel="stylesheet"/>
     <meta charset="utf-8">
     <meta name="description" content="homework for CNIT 132 done by Sarper Celebioglu">
+    <link rel="shortcut icon" href="image/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <a href="homework1.html">main page</a>
-    <h1>CNIT 132 Contact</h1>
-    <p>Sarper Celebioglu</p>
-    <p>Phone:+1 929 353 9615</p>
-    <p>e-mail:<a href="mailto:celebioglusarper@gmail.com">celebioglusarper@gmail.com</a></p>
+
+    <div class="grid">
+    
+        <div class="grid-area header">
+            <h1>CNIT 132 Contact</h1>
+        </div> 
+
+        <div class="grid-area menu">
+            <ul>
+                <li><a href="homework1.html">Home</a><br></li>
+                <li><a href="homework1.html">Back</a><br></li>
+            </ul>
+        </div>   
+
+        <div class="grid-area content">
+            <div class="instruction">
+            <p>Should you have any questions or need to get in contact with me, feel free to reach me out through the contact information at the bottom of the page or fill out the form below.</p>
+            <form action="#" method="post" title="Contact form" style="display: inline-block;">
+                <fieldset>
+                <legend>Contact</legend>
+                <label for="yourname" class="required">Full Name: </label>
+                <br>
+                <input type="text" name="yourname" size="30"  id="yourname" autofocus  placeholder="type full name" required>
+                <br>
+                <label for="myemail" class="required">Your email: </label>
+                <br>
+                <input type="email" name="myemail" size="30" id="myemail"  placeholder="xxx@example.com" required>
+                <br>
+                
+                <label for="comment">Comments: </label><br>
+                <textarea rows="3" cols="30"></textarea><br>
+                <button>Send</button>
+                </fieldset>
+    </form>
+</div>
+</div> 
+<br><br><br>
+<div class="grid-area footer"> &copy; 2020 Sarper Celebioglu 
+    <p>e-mail: <a href="mailto:celebioglusarper@gmail.com">celebioglusarper@gmail.com</a></p>
+</div>
     
     
     
@@ -24,10 +61,6 @@
     
     
     
-    
-    
-    
-    
-    
+</div>  
 </body> 
 </html>
